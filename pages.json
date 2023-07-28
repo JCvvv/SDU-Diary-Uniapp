@@ -1,0 +1,68 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/create/create",
+			"style": {
+				"navigationBarTitleText": "山大日记"
+			}
+		},
+		{
+			"path": "pages/author/author",
+			"style": {
+				"navigationBarTitleText": "历史"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/createWordVote/createWordVote",
+			"style": {
+				"navigationBarTitleText": "创建文字投票"
+			}
+		},
+		{
+			"path": "pages/createPicVote/createPicVote",
+			"style": {
+				"navigationBarTitleText": "创建图文投票"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "java1234-微投票",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color":"#4D4D4D",
+		"selectedColor":"#13227a",
+		"backgroundColor":"#FFFFFF",
+		"borderStyle":"black",
+		"position":"bottom",
+		"list": [
+			{
+				"text": "创建",
+				"pagePath": "pages/create/create",
+				"iconPath": "static/tabbar/icon/_create.png",
+				"selectedIconPath": "static/tabbar/icon/create.png"
+			},
+			{
+				"text": "历史",
+				"pagePath": "pages/author/author",
+				"iconPath": "static/tabbar/icon/_author.png",
+				"selectedIconPath": "static/tabbar/icon/author.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my/my",
+				"iconPath": "static/tabbar/icon/_my.png",
+				"selectedIconPath": "static/tabbar/icon/my.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

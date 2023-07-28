@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/create/create",
+    "pages/author/author",
+    "pages/my/my",
+    "pages/createWordVote/createWordVote",
+    "pages/createPicVote/createPicVote"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "java1234-微投票",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#4D4D4D",
+    "selectedColor": "#13227a",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "text": "创建",
+        "pagePath": "pages/create/create",
+        "iconPath": "static/tabbar/icon/_create.png",
+        "selectedIconPath": "static/tabbar/icon/create.png"
+      },
+      {
+        "text": "历史",
+        "pagePath": "pages/author/author",
+        "iconPath": "static/tabbar/icon/_author.png",
+        "selectedIconPath": "static/tabbar/icon/author.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabbar/icon/_my.png",
+        "selectedIconPath": "static/tabbar/icon/my.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

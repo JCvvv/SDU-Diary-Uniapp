@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'iconfont';  /* Project id 3888696 */
+  src: url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.woff2?t=1680049466852') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.woff?t=1680049466852') format('woff'),
+       url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.ttf?t=1680049466852') format('truetype');
+}
+
+.share {
+	font-family: iconfont;
+	margin-left: 20rpx;
+	font-size: 26rpx;
+	color: blue;
+}
+
+.uploadImg{
+	font-family: iconfont;
+	font-size: 56rpx;
+	color: #acacac;
+}
+
+.smallUploadImg{
+	font-family: iconfont;
+	font-size: 36rpx;
+	color: #acacac;
+}
+
+.removeOption{
+	font-family: iconfont;
+	font-size: 38rpx;
+	color: red;
+	padding-right: 10px;
+}
+
+.addOption{
+	font-family: iconfont;
+	font-size: 38rpx;
+	padding-right: 10px;
+}
+
+.chooseOption{
+	font-family: iconfont;
+	font-size: 26rpx;
+}
+
+.voteListItem{
+	font-family: iconfont;
+	font-size: 26rpx;
+}
+
+.voteManageItem{
+	font-family: iconfont;
+	font-size: 46rpx;
+	color: blue;
+	padding-bottom: 8px;
+}
