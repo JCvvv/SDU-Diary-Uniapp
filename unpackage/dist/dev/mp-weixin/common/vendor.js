@@ -7049,7 +7049,7 @@ const createSubpackageApp = initCreateSubpackageApp();
 }
 const pages = [
   {
-    path: "pages/create/create",
+    path: "pages/home/home",
     style: {
       navigationBarTitleText: "山大日记"
     }
@@ -7057,31 +7057,31 @@ const pages = [
   {
     path: "pages/author/author",
     style: {
-      navigationBarTitleText: "历史"
+      navigationBarTitleText: "山大日记"
     }
   },
   {
     path: "pages/my/my",
     style: {
-      navigationBarTitleText: "我的"
+      navigationBarTitleText: "山大日记"
     }
   },
   {
     path: "pages/createWordVote/createWordVote",
     style: {
-      navigationBarTitleText: "创建文字投票"
+      navigationBarTitleText: "山大日记"
     }
   },
   {
     path: "pages/createPicVote/createPicVote",
     style: {
-      navigationBarTitleText: "创建图文投票"
+      navigationBarTitleText: "山大日记"
     }
   }
 ];
 const globalStyle = {
   navigationBarTextStyle: "black",
-  navigationBarTitleText: "java1234-微投票",
+  navigationBarTitleText: "山大日记",
   navigationBarBackgroundColor: "#FFFFFF",
   backgroundColor: "#F8F8F8"
 };
@@ -7093,22 +7093,28 @@ const tabBar = {
   position: "bottom",
   list: [
     {
-      text: "创建",
-      pagePath: "pages/create/create",
-      iconPath: "static/tabbar/icon/_create.png",
-      selectedIconPath: "static/tabbar/icon/create.png"
+      text: "主页",
+      pagePath: "pages/home/home",
+      iconPath: "static/tabbar/icon/_home.png",
+      selectedIconPath: "static/tabbar/icon/home.png"
+    },
+    {
+      text: "日记",
+      pagePath: "pages/createPicVote/createPicVote",
+      iconPath: "static/tabbar/icon/_add.png",
+      selectedIconPath: "static/tabbar/icon/add.png"
     },
     {
       text: "历史",
       pagePath: "pages/author/author",
-      iconPath: "static/tabbar/icon/_author.png",
-      selectedIconPath: "static/tabbar/icon/author.png"
+      iconPath: "static/tabbar/icon/_history.png",
+      selectedIconPath: "static/tabbar/icon/history.png"
     },
     {
       text: "我的",
       pagePath: "pages/my/my",
-      iconPath: "static/tabbar/icon/_my.png",
-      selectedIconPath: "static/tabbar/icon/my.png"
+      iconPath: "static/tabbar/icon/_user.png",
+      selectedIconPath: "static/tabbar/icon/user.png"
     }
   ]
 };

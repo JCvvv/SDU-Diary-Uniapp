@@ -19,7 +19,7 @@
     "condition": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.0.0",
+  "libVersion": "",
   "appid": "wx74046931c276eb14",
   "projectname": "uni-vote3",
   "condition": {},

@@ -10,7 +10,7 @@
 				</view>
 			</view>
 			<view class="upload_img">
-				<uni-file-picker 
+				<uni-file-picker
 				@select="selectCoverFileFunc($event)"
 				:auto-upload="false" 
 				limit="1"
@@ -33,10 +33,10 @@
 			</view>
 			<view class="settings">
 				<view class="title">
-					<input type="text"  v-model="title" placeholder="填写心情标签"  placeholder-style="color:#bababa;font-size:16px"/>
+					<input type="text"  v-model="title" placeholder="日记标题"  placeholder-style="color:#bababa;font-size:16px"/>
 				</view>
 				<view class="explanation">
-					<textarea v-model="explanation" placeholder="投票说明 (非必填)" placeholder-style="color:#bababa;font-size:14px"></textarea>
+					<textarea v-model="explanation" placeholder="日记正文" placeholder-style="color:#bababa;font-size:14px"></textarea>
 				</view>
 			</view>
 		</view>
@@ -49,18 +49,18 @@
 			</view>
 			<view class="option_list">
 				<view class="option_item" v-for="(item,index) in options" :key="item.id">
-					<text class="removeOption" @click="removeOption(item.id)">&#xe618;</text><input type="text" v-model="item.name" placeholder="写点什么吧" placeholder-style="color:#bababa;font-size:14px">
+					<text class="removeOption" @click="removeOption(item.id)">&#xe618;</text><input type="text" v-model="item.name" placeholder="添加心情" placeholder-style="color:#bababa;font-size:14px">
 				</view>
 			</view>
 			<view class="option_add" @click="addOption()">
-				<text class="addOption">&#xe660;</text><text>添加选项</text>
+				<text class="addOption">&#xe660;</text><text>添加心情</text>
 			</view>
 		</view>
 		
 	</view>
 	
 	<view class="vote_btn" >
-		<button type="primary" @click="submitVote">发起投票</button>
+		<button type="primary" @click="submitVote">发布日记</button>
 	</view>
 </template>
 
@@ -71,7 +71,7 @@
 	export default{
 		data(){
 			const curDate=new Date();
-			const vv=new Date(curDate.getTime()+24*60*60*1000);
+			const vv=new Date(curDate.getTime());
 			return{
 				title:'',
 				explanation:'',
@@ -97,11 +97,6 @@
 		computed:{
 			startDate(){
 				return new Date();
-			},
-			endDate(){
-				const curDate=new Date();
-				const vv=new Date(curDate.getTime()+24*60*60*1000*365);
-				return vv;
 			}
 		},
 		methods:{
@@ -130,6 +125,57 @@
 						}
 					}
 				})
+				
+			},
+
+			submitVote:async function(e){
+				if(isEmpty(this.title)){
+					uni.showToast({
+						icon:"error",
+						title:"请填写标题"
+					})
+					return;
+				}
+				
+				if(isEmpty(this.explanation)){
+					uni.showToast({
+						icon:"error",
+						title:"请填写正文"
+					})
+					return;
+				}
+				
+				let resultOptions = this.options.filter(function(value,index,self){
+					return !isEmpty(value.name)
+				})
+				
+				let form={
+					title:this.title,
+					coverImage:this.coverImageFileName,
+					explanation:this.explanation,
+					voteEndTime:this.voteEndTime,
+					voteItemList:resultOptions,
+					type:1
+				}
+				
+				let result = await requestUtil({url:"/vote/add",data:form,method:"post"});
+				if(result.code ==0){
+					uni.showToast({
+						icon:"success",
+						title:"发布成功"
+					})
+					setTimeout(function() {
+					  uni.reLaunch({
+					       url: 'createPicVote',
+					  });
+					}, 500); 
+				}else{
+					uni.showToast({
+						icon:"error",
+						title:"发布失败，请重试"
+					})
+				}
+				
 			}
 		}
 	}
@@ -220,7 +266,6 @@
 					background-color: white;
 					padding: 10px;
 					display: flex;
-					
 				}
 			}
 			.option_add{
@@ -269,6 +314,7 @@
 		position: fixed;
 		bottom: 0;
 		border-top: 1px solid #e4e4e4;
+		z-index: 10;
 		button{
 			margin: 10px;
 		}

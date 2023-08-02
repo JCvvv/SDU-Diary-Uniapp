@@ -1,4 +1,7 @@
 "use strict";
+const judgeDate = (toDate) => {
+  return (/* @__PURE__ */ new Date()).getTime() - new Date(toDate).getTime();
+};
 var timeFormat = function(msTime) {
   let time = new Date(msTime);
   let yy = time.getFullYear();
@@ -9,4 +12,5 @@ var timeFormat = function(msTime) {
   let sec = time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds();
   return yy + "-" + MM + "-" + dd + " " + hh + ":" + min + ":" + sec;
 };
+exports.judgeDate = judgeDate;
 exports.timeFormat = timeFormat;

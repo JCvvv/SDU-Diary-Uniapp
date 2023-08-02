@@ -1,11 +1,12 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const util_requestUtil = require("../../util/requestUtil.js");
+const util_stringUtil = require("../../util/stringUtil.js");
 const util_dateUtil = require("../../util/dateUtil.js");
 const _sfc_main = {
   data() {
     const curDate = /* @__PURE__ */ new Date();
-    const vv = new Date(curDate.getTime() + 24 * 60 * 60 * 1e3);
+    const vv = new Date(curDate.getTime());
     return {
       title: "",
       explanation: "",
@@ -31,11 +32,6 @@ const _sfc_main = {
   computed: {
     startDate() {
       return /* @__PURE__ */ new Date();
-    },
-    endDate() {
-      const curDate = /* @__PURE__ */ new Date();
-      const vv = new Date(curDate.getTime() + 24 * 60 * 60 * 1e3 * 365);
-      return vv;
     }
   },
   methods: {
@@ -65,6 +61,50 @@ const _sfc_main = {
           }
         }
       });
+    },
+    submitVote: async function(e) {
+      if (util_stringUtil.isEmpty(this.title)) {
+        common_vendor.index.showToast({
+          icon: "error",
+          title: "请填写标题"
+        });
+        return;
+      }
+      if (util_stringUtil.isEmpty(this.explanation)) {
+        common_vendor.index.showToast({
+          icon: "error",
+          title: "请填写正文"
+        });
+        return;
+      }
+      let resultOptions = this.options.filter(function(value, index, self) {
+        return !util_stringUtil.isEmpty(value.name);
+      });
+      let form = {
+        title: this.title,
+        coverImage: this.coverImageFileName,
+        explanation: this.explanation,
+        voteEndTime: this.voteEndTime,
+        voteItemList: resultOptions,
+        type: 1
+      };
+      let result = await util_requestUtil.requestUtil({ url: "/vote/add", data: form, method: "post" });
+      if (result.code == 0) {
+        common_vendor.index.showToast({
+          icon: "success",
+          title: "发布成功"
+        });
+        setTimeout(function() {
+          common_vendor.index.reLaunch({
+            url: "createPicVote"
+          });
+        }, 500);
+      } else {
+        common_vendor.index.showToast({
+          icon: "error",
+          title: "发布失败，请重试"
+        });
+      }
     }
   }
 };
@@ -100,7 +140,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     }),
     h: common_vendor.o(($event) => $options.addOption()),
-    i: common_vendor.o((...args) => _ctx.submitVote && _ctx.submitVote(...args))
+    i: common_vendor.o((...args) => $options.submitVote && $options.submitVote(...args))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/Jc/Desktop/sdu-diary/pages/createPicVote/createPicVote.vue"]]);

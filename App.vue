@@ -14,6 +14,7 @@
 			console.log('App Hide')
 		},
 		methods:{
+			
 			async wxlogin(code){
 				console.log("code="+code);
 				const result=await requestUtil({url:"/user/wxLogin",data:{code:code},method:"post"});

@@ -1,0 +1,129 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3888696 */
+  src: url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.woff2?t=1680049466852') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.woff?t=1680049466852') format('woff'),
+       url('//at.alicdn.com/t/c/font_3888696_rjermxmgmb.ttf?t=1680049466852') format('truetype');
+}
+.share {
+	font-family: iconfont;
+	margin-left: 20rpx;
+	font-size: 26rpx;
+	color: blue;
+}
+.uploadImg{
+	font-family: iconfont;
+	font-size: 56rpx;
+	color: #acacac;
+}
+.smallUploadImg{
+	font-family: iconfont;
+	font-size: 36rpx;
+	color: #acacac;
+}
+.removeOption{
+	font-family: iconfont;
+	font-size: 38rpx;
+	color: red;
+	padding-right: 10px;
+}
+.addOption{
+	font-family: iconfont;
+	font-size: 38rpx;
+	padding-right: 10px;
+}
+.chooseOption{
+	font-family: iconfont;
+	font-size: 26rpx;
+}
+.voteListItem{
+	font-family: iconfont;
+	font-size: 26rpx;
+}
+.voteManageItem{
+	font-family: iconfont;
+	font-size: 46rpx;
+	color: blue;
+	padding-bottom: 8px;
+}
+.create_vote_list {
+  padding: 10px;
+}
+.create_vote_list .vote_list .vote_item {
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.create_vote_list .vote_list .vote_item .vote_item_pic {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABPVJREFUaEPdmWtsFFUUx/9ndqESvxCMNeKXYjtzF6vFZO1sGx8piVg1EvGFqZgqSoLUV4jxERMjxmhUSEQNRvERMJhIqpJQg4KvfighM8vG+AD23l0FG1KDjy8iUN3uHDPbLlmWrTuz22G33mSTzdyz9/5/99w999w5hGneaJrrx/8XwDDMp4m5C0RdNfUS8yATDSplP1NKR0kPCGHuBOOamgovnpywS0q7+/THRU8Mw/yBgFYwDxLTk8m0vaeWIJEWs5OJn3d3AgP7lLIvLtRzigdy2wZYA+AdqewVtRRePLcwzLcB3MvAmsLtdAqAMGI7AL4O5Fwh5d7ddQUgLrscrA0B9KlU1vV5bUUAJrsdUtl1GZ2Ecbo+3wCGYfYScBOALgKkAxrKZLD24EHrSNAeqxpA6OZeEKIlhRItkNL6LkiIqgCEMN8H4w5XIDEWj2b+GQqHG+aGNF4NYAUzjpA2Q5dy99GgICoGmD8/er6TDY24wrIOtabT1v5CkUKY28FYDMaLMmU/UXcAEd28gQkDDNqklLW8WKBhmA8Q8BqAfqnspfUI8CATXgVhrZT2YyUAlhCwDYydMmVfW38AkViUHd47mcD8AcjgjUrFV1YD0NR06eyGhhk9cDTBxI0ENIJxHgiNcL8XhXnPYTQfgYpPQl3viGnEHwM8F4SlUtr9/gFuCwlxqAdMtwBYUu73heeUdwARawPzt+7gDP6cGPuYtNkEvh3ALGJamUxZG8tNXtgfiZjnMHMfmNz/1byCvi8Z/IXGNOwQDYfHxob3/5QYrjgK5QfORSMn9GYu4hS0Yq+Ug2hq6jpr5szjfQT0AWjO2RMGyKFPKDw2cOBA4pdSY1QNkB/UzRAdDR0aI0XhbGKyCUuK0M37QNwH0CXj3sRmgDcoFY+XA58ygHITTdYv9Nh6ED88vuL8EaBtkNL62ut4NQNoa2s7++/RWf25TBc4AaJeKa0PvQrP29UEoLW5s2UslE1NiPidNNyZTNo7/Yp37c84gK53zNfIyacdh7IOLUinrT8rEX/GAaLR6Iy/joZ+BTAbwJBU9pWVCq/JFhKG+RWAhQCNSGVdUK34M+oBw4itI/Aj7qRZJ9uSTid+nDYAuh5bpBHvmojxNytlb5sK8RV7QNfbr9Y06Mxaswa+0AFGAU5oDic41JAovsAI3fwMhG6/p7MXSF9RKKK33w2i5Qxc9R+D/8zg55SKv5VbIdG+CkyvAziYdTKxdPqb37wI82rjGQCAO/G5EwMrBhL5VXc0igIUJeTuxsaEzQ4Gr9FAmxi4iJgfTabi67wK82rnB8A960dAeEpK691JUwMRuweMZ3Op9MlG3x87rsUOH95zwqswr3Y+AGirFhpb7SVJG78vh1/GeFrtZmerZMp+w6soP3aeAfy+2Gpt7Zwzlsn+AeBY1snMm+q9H/hBJkT7MjBtAdN2mbJu9LOqfmwD84DQzS0gLGPw/UrF3SgUSAsOwDDd7TMn62Qag9o+FR9k5ZZS5O/KzIMyFV9Yzr6a/kA8IFpit0LjfgJ/kFTxnmoElvttMAB6+0MgegXM62Uq7r4nDax5APBf4BC6+QIIj7sfKe2XglIvvBQ4KikxRQxzMwO9DNyllP1eYABeSkzu5H6LfIbRvotAi8ih7mTayqXRU9l8FflOnnjTucyah5jWhe6p3AJBj1WX1Ug/0NMe4F9hzAFej30kqgAAAABJRU5ErkJggg==") no-repeat center;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.425rem;
+  background-size: cover;
+  margin: 30rpx;
+}
+.create_vote_list .vote_list .vote_item .vote_item_word {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAyhJREFUaEPtWYFNKzEMjTMJTELZINcFKJN8mARYoJcNKJP8+4uckavklLpJ7IRW6L5aCYmqycXv2X6xfWBW/oGV229uAH7bgzcP/DcecM7dGWM21to7RHwwxtB3+psCyAkR6f8v7/37pYD/OISccxsA+EPGNxh1BIWIrz8F0w2AGAeAt0bDcxjJM8/e+0MDAcvSLgDb7fYFEYl1/pkA4GOeZzJm8t5PIbRo3TGkAOApBxoAXvf7/UsriCYAJdZbD6fnWGt3GRIO4zg+toBoAjAMwydjr/nA1LgCkGkcx3stCDUAbnwr6zWDMiGpJkYFgB+AiI+9SVcC4pzbBVE4LtESJAIIMkmh0/RgbQik63qIEgGw0FG7tgcA7XHOvQHALuwXz6sC4Owj4j1JY69xmn1B6f7GtVK4VgGk7CPiu/f+mRsRlWSeZ9J9VYlA8R4ZzhHS4gUJACZMnLGfYSsLkklnGiJ0C5MgnHiVP3ccx6KdxR9SVaiwf6IcdPtKGj4Mw0JKTW2Y94uqVwOwMBVqlbPw4DmiBHByGZZinClSMZmLALQMJAepirKkHKG66KNU/zByugCQElABRmXv1dUnJw4AENWoGJo1DyyxWksijTT2rGGJvD4ABDpN+BKJNQ80hVA8rFbDJMomqtUlPLCohXQbBrbi+mLCRWEoyTK7L6hVjTVYVxIvADSVYXpv5Nant2tJlhmA5Y6pAa7dAyoG0kNZ4UeyerDW/kNEaiOPimaMEQs05lFSQeqZs2VKDQDp9CJjuSu/IH21Rl9lPE/gmoxLtVCaB2KdEwGFcEpZp2b/S9u0s3CrnttSTmcLrx6Nl/ak8ikJSFNDo1EPyTjp99YGSgSw+paSGOO9qkZWJaYzApCq3uWaejooN9C6JIirj1USEKRKUc9Jn0mbaUDb1ScXJn1imZF6T8wBdjvmRoJxHkpypwLya6PF6InCXJOMP+p9OtyNe8hz1tpNeHdwNorvDckmD3BvrHa8nqkaW19w0CNULaikZt0eyNVBYXL9AADx9VJM+CW8aJ+2pJCMp98vBkBz2DXW3ABcg9WWZ9480MLWNdau3gPfgVRrT4N+9F4AAAAASUVORK5CYII=") no-repeat center;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.425rem;
+  background-size: cover;
+  margin: 30rpx;
+}
+.create_vote_list .vote_list .vote_item .vote_item_body {
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.create_vote_list .vote_list .vote_item .vote_item_body .vote_item_title {
+  font-size: 1.2rem;
+  overflow: hidden;
+  width: 100%;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+.create_vote_list .vote_list .vote_item .vote_item_body .vote_item_status_progressive {
+  width: 100%;
+  line-height: 1.1375rem;
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+  color: blue;
+}
+.create_vote_list .vote_list .vote_item .vote_item_body .vote_item_status_over {
+  width: 100%;
+  line-height: 1.1375rem;
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+  color: gray;
+}
